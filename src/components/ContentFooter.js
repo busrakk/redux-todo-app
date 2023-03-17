@@ -1,14 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeActiveFilter, clearCompleted } from "../redux/todos/todosSlice";
+import { changeActiveFilter, clearCompleted, selectTodos, selectActiveFilter } from "../redux/todos/todosSlice";
 
 const ContentFooter = () => {
-  const items = useSelector((state) => state.todos.items);
+
+  const items = useSelector(selectTodos)
   
   const itemsLeft = items.filter((item) => !item.completed).length;
 
   const dispatch = useDispatch();
-  const activeFilter = useSelector((state) => state.todos.activeFilter);
+  const activeFilter = useSelector(selectActiveFilter);
 
   // console.log(items)
 
