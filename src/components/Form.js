@@ -8,8 +8,8 @@ import { addTodoAsync } from "../redux/todos/todosSlice";
 const Form = () => {
 
   const [title, setTitle] = useState('')
-  const isLoading = useSelector(state => state.todos.addNewTodoIsLoading)
-  const error = useSelector((state) => state.todos.addNewTodoError)
+  const isLoading = useSelector(state => state.todos.addNewTodo.isLoading)
+  const error = useSelector((state) => state.todos.addNewTodo.error)
 
   const dispatch = useDispatch()
 
