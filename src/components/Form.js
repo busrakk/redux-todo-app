@@ -3,7 +3,7 @@ import Loading from "./Loading"
 import Error from "./Error"
 
 import { useDispatch, useSelector } from "react-redux";
-import { addTodoAsync } from "../redux/todos/todosSlice";
+import { addTodoAsync } from "../redux/todos/services";
 
 const Form = () => {
 

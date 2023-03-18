@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeActiveFilter, clearCompleted, selectTodos, selectActiveFilter } from "../redux/todos/todosSlice";
 
@@ -10,6 +10,10 @@ const ContentFooter = () => {
 
   const dispatch = useDispatch();
   const activeFilter = useSelector(selectActiveFilter);
+
+  useEffect(() => {
+    localStorage.setItem('activeFilter', activeFilter)
+  }, [activeFilter])
 
   // console.log(items)
 
